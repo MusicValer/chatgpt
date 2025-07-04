@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musik Distribution Service</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Kostenloser Musik Distribution Service</h1>
+    <form id="uploadForm">
+        <label for="artist">Künstlername:</label>
+        <input type="text" id="artist" name="artist" required>
+        <label for="title">Track Titel:</label>
+        <input type="text" id="title" name="title" required>
+        <label for="file">Audiodatei:</label>
+        <input type="file" id="file" name="file" accept="audio/*" required>
+        <fieldset>
+            <legend>Zielplattformen:</legend>
+            <label><input type="checkbox" name="platform" value="Spotify">Spotify</label>
+            <label><input type="checkbox" name="platform" value="Apple Music">Apple Music</label>
+            <label><input type="checkbox" name="platform" value="iTunes">iTunes</label>
+            <label><input type="checkbox" name="platform" value="TikTok">TikTok</label>
+            <label><input type="checkbox" name="platform" value="Facebook">Facebook</label>
+            <label><input type="checkbox" name="platform" value="YouTube">YouTube</label>
+        </fieldset>
+        <button type="submit">Distributieren</button>
+    </form>
+    <div id="message"></div>
+    <script src="script.js"></script>
+</body>
+</html>
