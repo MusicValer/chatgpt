@@ -1,0 +1,10 @@
+<% if (courses.length === 0) { %>
+<p>No courses yet.</p>
+<% } else { %>
+<ul>
+  <% courses.forEach(course => { %>
+    <li><a href="/courses/<%= course.id %>"><%= course.name %></a></li>
+  <% }) %>
+</ul>
+<% } %>
+<a href="/courses/new">Create Course</a>
