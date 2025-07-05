@@ -1,0 +1,58 @@
+<h2><%= course.name %></h2>
+<a href="/courses/<%= course.id %>/tasks/new">New Task</a>
+<a href="/courses/<%= course.id %>/tests/new">New Test</a>
+<a href="/courses/<%= course.id %>/solutions/new">New Solution</a>
+
+<h3>Tasks</h3>
+<% if (course.tasks.length === 0) { %>
+<p>No tasks.</p>
+<% } else { %>
+<ul>
+  <% course.tasks.forEach(task => { %>
+    <li>
+      <%= task.title %> - <a href="/courses/<%= course.id %>/tasks/<%= task.id %>/edit">Edit</a> |
+      <form style="display:inline" action="/courses/<%= course.id %>/tasks/<%= task.id %>/delete" method="POST">
+        <button type="submit">Delete</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>
+<% } %>
+
+<h3>Tests</h3>
+<% if (course.tests.length === 0) { %>
+<p>No tests.</p>
+<% } else { %>
+<ul>
+  <% course.tests.forEach(test => { %>
+    <li>
+      <%= test.title %> - <a href="/courses/<%= course.id %>/tests/<%= test.id %>/edit">Edit</a> |
+      <form style="display:inline" action="/courses/<%= course.id %>/tests/<%= test.id %>/delete" method="POST">
+        <button type="submit">Delete</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>
+<% } %>
+
+<h3>Solutions</h3>
+<% if (course.solutions.length === 0) { %>
+<p>No solutions.</p>
+<% } else { %>
+<ul>
+  <% course.solutions.forEach(sol => { %>
+    <li>
+      <%= sol.title %> - <a href="/courses/<%= course.id %>/solutions/<%= sol.id %>/edit">Edit</a> |
+      <form style="display:inline" action="/courses/<%= course.id %>/solutions/<%= sol.id %>/delete" method="POST">
+        <button type="submit">Delete</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>
+<% } %>
+
+<form action="/courses/<%= course.id %>/delete" method="POST">
+  <button type="submit">Delete Course</button>
+</form>
+
+<a href="/">Back to courses</a>
